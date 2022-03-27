@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Components</title>
+</head>
+<body>
+<div id="app">
+    <input type="text" placeholder="Name"  v-model="name"><br><br>
+    <input type="email" placeholder="Email" v-model="email">
+    <div><span v-if="!isName">{{message['name']}}</span>
+        <span  v-if="!isEmail">{{message['email']}}</span>
+    </div>
+    <div>{{validated}}</div>
+    <div v-for="item in items" :key="item.id">
+        <component-lists :name="item.name" :codename="item.codename" ></component-lists>
+
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
